@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xQw8KjrGDRVjBs1FybxjpMCZIyp5HvuaHPzorii9Z8Lyaz5a3Hn+uW4EBMMs/27DnudXLzR8EWXmAd4irtI6Sg==",
+  "dgSpecHash": "fpPdlezj53SPvd3J+A9wCuh1QUvoL7VSCRwHQ6bCffV4DLGgXlNOzl0DLwnCSPFuyO6kDHQNqLaic8RBDXhRKA==",
   "success": true,
-  "projectFilePath": "D:\\phonebook\\API\\phonebookAPI\\PhoneBookAPI\\PhoneBookAPI.csproj",
+  "projectFilePath": "D:\\phonebook\\API\\PhoneBookAPI\\PhoneBookAPI\\PhoneBookAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

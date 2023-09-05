@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\phonebook\\API\\phonebookAPI\\PhoneBookAPI\\PhoneBookAPI.csproj": {}
+    "D:\\phonebook\\API\\PhoneBookAPI\\PhoneBookAPI\\PhoneBookAPI.csproj": {}
   },
   "projects": {
-    "D:\\phonebook\\API\\phonebookAPI\\PhoneBookAPI\\PhoneBookAPI.csproj": {
+    "D:\\phonebook\\API\\PhoneBookAPI\\PhoneBookAPI\\PhoneBookAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\phonebook\\API\\phonebookAPI\\PhoneBookAPI\\PhoneBookAPI.csproj",
+        "projectUniqueName": "D:\\phonebook\\API\\PhoneBookAPI\\PhoneBookAPI\\PhoneBookAPI.csproj",
         "projectName": "PhoneBookAPI",
-        "projectPath": "D:\\phonebook\\API\\phonebookAPI\\PhoneBookAPI\\PhoneBookAPI.csproj",
+        "projectPath": "D:\\phonebook\\API\\PhoneBookAPI\\PhoneBookAPI\\PhoneBookAPI.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\phonebook\\API\\phonebookAPI\\PhoneBookAPI\\obj\\",
+        "outputPath": "D:\\phonebook\\API\\PhoneBookAPI\\PhoneBookAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
