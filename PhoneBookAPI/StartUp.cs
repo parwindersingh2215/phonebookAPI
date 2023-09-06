@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -11,7 +11,8 @@ using PhoneBookAPI.Repositories.Interfaces;
 using PhoneBookAPI.Repositories.Respositories;
 using PhoneBookAPI.Services.Interfaces;
 using PhoneBookAPI.Services.Services;
-using Swashbuckle.AspNetCore.Filters;
+using Serilog;
+
 using System.Text;
 
 namespace PhoneBookAPI
@@ -30,6 +31,7 @@ namespace PhoneBookAPI
 
         private void ConfigureCors(IServiceCollection services)        {
             services.AddCors(options =>            {                options.AddPolicy("PhoneBook",                    builder => builder.SetIsOriginAllowed(x => _ = true)                    .AllowAnyMethod()                    .AllowAnyHeader()                    .AllowCredentials());            });
+           
             //services.AddCors(options =>
             //{
             //    options.AddPolicy(name: "PhoneBook",
@@ -67,7 +69,7 @@ namespace PhoneBookAPI
               
 
             });
-            
+          
             services.AddAuthentication().AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters()
@@ -92,6 +94,9 @@ namespace PhoneBookAPI
             services.AddScoped<IPasswordHasher, PasswordHasher>();
             #endregion
 
+          
+
+
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -104,10 +109,11 @@ namespace PhoneBookAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+            
             app.UseCors("PhoneBook");
             app.UseRouting();
             app.UseAuthorization();
-
+           
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

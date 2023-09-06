@@ -24,7 +24,12 @@ public class Program
         var builder = Host.CreateDefaultBuilder(args).ConfigureWebHostDefaults(webBuilder =>
         {
             webBuilder.UseStartup<StartUp>();
+        }).ConfigureLogging(builder =>
+        {
+            builder.ClearProviders();
+            builder.AddConsole();
         });
+        
         return builder;
     }
 

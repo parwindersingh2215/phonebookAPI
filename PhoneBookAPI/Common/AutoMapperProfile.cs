@@ -12,7 +12,7 @@ namespace PhoneBookAPI.Common
         public AutoMapperProfile()
         {
             CreateMap<UserContacts, UserContactsViewModel>();
-            CreateMap<UserContactInputModel, UserContacts>();
+            CreateMap<UserContactSaveModel, UserContacts>();
             CreateMap<UserContactUpdateModel, UserContacts>();
             CreateMap<Users, UserViewModel>();
             CreateMap<UserInputModel, Users>();

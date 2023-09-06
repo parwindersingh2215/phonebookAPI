@@ -66,7 +66,7 @@ namespace PhoneBookAPI.Controllers
             {
 
 
-                var result = await _userService.GetUserByUserNameOrEmail(value.UserName, value.UserName);
+                var result = await _userService.GetUserByUserNameOrEmailAsync(value.UserName, value.UserName);
             
                 if (result == null)
                 {
@@ -78,7 +78,7 @@ namespace PhoneBookAPI.Controllers
 
                     };
                 }
-                bool ismatchPassword = await _userService.UserLogin(value);
+                bool ismatchPassword = await _userService.UserLoginAsync(value);
                 if (ismatchPassword)
                 {
                     // create token
@@ -121,7 +121,7 @@ namespace PhoneBookAPI.Controllers
             try
             {
 
-                var result = await _userService.GetUserByUserNameOrEmail(value.UserName, value.EmailAddress);
+                var result = await _userService.GetUserByUserNameOrEmailAsync(value.UserName, value.EmailAddress);
 
                 if (result != null)
                 {

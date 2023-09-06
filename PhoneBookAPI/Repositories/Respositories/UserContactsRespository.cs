@@ -44,7 +44,7 @@ namespace PhoneBookAPI.Repositories.Respositories
         /// <returns></returns>
         public async Task<List<UserContacts>> GetbyUserAsync(long UserId)
         {
-            return await _dbContext.UserContacts.Where(x => x.UserId == UserId && x.IsDeleted != true).ToListAsync();
+            return await _dbContext.UserContacts.Where(x => x.UserId == UserId && x.IsActive==true && x.IsDeleted != true).ToListAsync();
         }
         /// <summary>
         /// delete usercontact by id (soft del)

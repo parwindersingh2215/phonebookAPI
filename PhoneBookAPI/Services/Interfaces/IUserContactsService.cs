@@ -11,7 +11,7 @@ namespace PhoneBookAPI.Services.Interfaces
         /// </summary>
         /// <param name="userContacts"></param>
         /// <returns></returns>
-        Task<int> AddSync(UserContactInputModel userContacts);
+        Task<int> AddSync(UserContactSaveModel userContacts);
         /// <summary>
         /// Update UserContact details
         /// </summary>

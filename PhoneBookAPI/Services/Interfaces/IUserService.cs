@@ -11,13 +11,13 @@ namespace PhoneBookAPI.Services.Interfaces
         /// <param name="UserName"></param>
         /// <param name="Password"></param>
         /// <returns></returns>
-        Task<UserViewModel> GetUserByUserNameOrEmail(string UserName, string Password);
+        Task<UserViewModel> GetUserByUserNameOrEmailAsync(string UserName, string Password);
         /// <summary>
         /// User Login
         /// </summary>
         /// <param name="userLoginModel"></param>
         /// <returns></returns>
-        Task<bool> UserLogin(UserLoginModel userLoginModel);
+        Task<bool> UserLoginAsync(UserLoginModel userLoginModel);
         /// <summary>
         /// Save new User details(Signup process)
         /// </summary>
@@ -29,6 +29,6 @@ namespace PhoneBookAPI.Services.Interfaces
         /// </summary>
         /// <param name="UserName"></param>
         /// <returns></returns>
-        Task<long> getUserId(string UserName);
+        Task<long> getUserIdAsync(string UserName);
     }
 }

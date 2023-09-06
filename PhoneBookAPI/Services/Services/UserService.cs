@@ -14,7 +14,7 @@ namespace PhoneBookAPI.Services.Services
         #region Constructor and D.I
         private readonly IUserRepostory _userRepostory;
         private readonly IPasswordHasher _passwordHasher;
-        private readonly ILogger _logger;
+        private readonly ILogger<UserService> _logger;
         private readonly IMapper _mapper;
         /// <summary>
         /// Add D.I
@@ -49,10 +49,20 @@ namespace PhoneBookAPI.Services.Services
         /// </summary>
         /// <param name="SearchText"></param>
         /// <returns></returns>
-        public async Task<UserViewModel> GetUserByUserNameOrEmail(string UserName, string Password)
+        public async Task<UserViewModel> GetUserByUserNameOrEmailAsync(string UserName, string Password)
         {
-            var UserData = await _userRepostory.GetUserByUserNameOrEmailAsync(UserName, Password);
-            return _localmapper.Map<UserViewModel>(UserData);
+            try
+            {
+
+
+                var UserData = await _userRepostory.GetUserByUserNameOrEmailAsync(UserName, Password);
+                return _localmapper.Map<UserViewModel>(UserData);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "GetUserByUserNameOrEmail failed");
+                throw;
+            }
         }
 
         /// <summary>
@@ -60,14 +70,22 @@ namespace PhoneBookAPI.Services.Services
         /// </summary>
         /// <param name="userLoginModel"></param>
         /// <returns></returns>
-        public async Task<bool> UserLogin(UserLoginModel userLoginModel)
+        public async Task<bool> UserLoginAsync(UserLoginModel userLoginModel)
         {
-            var userdata = await _userRepostory.GetUserByUserNameOrEmailAsync(userLoginModel.UserName, userLoginModel.UserName);
-            if (userdata != null)
+            try
             {
-                return _passwordHasher.Verify(userdata.PasswordHash, userLoginModel.Password);
+                var userdata = await _userRepostory.GetUserByUserNameOrEmailAsync(userLoginModel.UserName, userLoginModel.UserName);
+                if (userdata != null)
+                {
+                    return _passwordHasher.Verify(userdata.PasswordHash, userLoginModel.Password);
+                }
+                return false;
             }
-            return false;
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "UserLogin failed");
+                throw;
+            }
 
         }
 
@@ -78,13 +96,24 @@ namespace PhoneBookAPI.Services.Services
         /// <returns></returns>
         public async Task<int> SaveUserAsync(UserInputModel userInputModel)
         {
+            try
+            {
+
+         
             var userentity = _localmapper.Map<Users>(userInputModel);
             (var hash, var salt) = _passwordHasher.Hash(userInputModel.Password);
             userentity.IsActive = true;
             userentity.CreatedAt = DateTime.Now;
             userentity.PasswordHash = hash;
             userentity.PasswordSalt = salt;
-            return await _userRepostory.SaveUserAsync(userentity);
+                return await _userRepostory.SaveUserAsync(userentity);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "SaveUserAsync failed");
+                throw;
+            }
+           
         }
 
         /// <summary>
@@ -92,7 +121,7 @@ namespace PhoneBookAPI.Services.Services
         /// </summary>
         /// <param name="UserName"></param>
         /// <returns></returns>
-        public async Task<long> getUserId(string UserName)
+        public async Task<long> getUserIdAsync(string UserName)
         {
             return await _userRepostory.getUserId(UserName);
         }

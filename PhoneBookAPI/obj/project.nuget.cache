@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fpPdlezj53SPvd3J+A9wCuh1QUvoL7VSCRwHQ6bCffV4DLGgXlNOzl0DLwnCSPFuyO6kDHQNqLaic8RBDXhRKA==",
+  "dgSpecHash": "1pFy6cfks6rdZi5qYZn0WKF0RPsS/l8lau8qaC8Y2V4mLncgXUmyiioBXSyruPBoTz6fY/S4jPms2aVDMzcB7Q==",
   "success": true,
   "projectFilePath": "D:\\phonebook\\API\\PhoneBookAPI\\PhoneBookAPI\\PhoneBookAPI.csproj",
   "expectedPackageFiles": [
@@ -50,6 +50,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\scrutor\\3.3.0\\scrutor.3.3.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\serilog\\3.0.1\\serilog.3.0.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore.filters\\7.0.8\\swashbuckle.aspnetcore.filters.7.0.8.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore.filters.abstractions\\7.0.8\\swashbuckle.aspnetcore.filters.abstractions.7.0.8.nupkg.sha512",

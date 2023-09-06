@@ -10,14 +10,14 @@ namespace PhoneBookAPI.Services.Services
     {
         #region Constructor and D.I
         private readonly IUserContactsRespository _userContactsRespository;
-        private readonly ILogger _logger;
+        private readonly ILogger<UserContactsService> _logger;
         private readonly IMapper _mapper;
         /// <summary>
         /// Add D.I
         /// </summary>
         /// <param name="userContactsRespository"></param>
         /// <param name="mapper"></param>
-        public UserContactsService(IUserContactsRespository userContactsRespository, IMapper mapper, ILogger logger)
+        public UserContactsService(IUserContactsRespository userContactsRespository, IMapper mapper, ILogger<UserContactsService> logger)
         {
             _userContactsRespository = userContactsRespository;
             _mapper = mapper;
@@ -32,20 +32,21 @@ namespace PhoneBookAPI.Services.Services
             _localmappercfg = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<UserContacts, UserContactsViewModel>();
-                cfg.CreateMap<UserContactInputModel, UserContacts>();
+                cfg.CreateMap<UserContactSaveModel, UserContacts>();
                 cfg.CreateMap<UserContactUpdateModel, UserContacts>();
             });
             _localmapper = new Mapper(_localmappercfg);
         }
         #endregion
         ///<inheritdoc />
-        public async Task<int> AddSync(UserContactInputModel inputModel)
+        public async Task<int> AddSync(UserContactSaveModel inputModel)
         {
             try
             {
                 UserContacts userContact = new UserContacts();
-                userContact = _localmapper.Map<UserContactInputModel, UserContacts>(inputModel);
+                userContact = _localmapper.Map<UserContactSaveModel, UserContacts>(inputModel);
                 userContact.CreatedAt = DateTime.Now;
+                userContact.IsActive = true;
                 return await _userContactsRespository.AddAsync(userContact);
             }
             catch (Exception ex)

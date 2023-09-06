@@ -2,10 +2,10 @@
 
 namespace PhoneBookAPI.Models
 {
-    public class UserContactInputModel
+    public class UserContactSaveModel
     {
 
-     
+        public long UserId { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]
@@ -14,7 +14,7 @@ namespace PhoneBookAPI.Models
         public string MobileNo { get; set; }
         [Required]
         public string LandLineNo { get; set; }
-        public string? AlternateMobileNo { get; set; }
+        public string AlternateMobileNo { get; set; }
 
     }
 }
