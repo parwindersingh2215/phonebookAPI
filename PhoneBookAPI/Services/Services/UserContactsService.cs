@@ -65,6 +65,7 @@ namespace PhoneBookAPI.Services.Services
                 if (!string.IsNullOrWhiteSpace(updateModel.LandLineNo))
                     usercontacts.LandLineNo = updateModel.LandLineNo;
                 usercontacts.LastName = updateModel.LastName;
+                usercontacts.FirstName=updateModel.FirstName;
                 usercontacts.AlternateMobileNo = updateModel.AlternateMobileNo;
                 if (updateModel.IsActive.HasValue)
                     usercontacts.IsActive = (bool)updateModel.IsActive;

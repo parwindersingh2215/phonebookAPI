@@ -24,6 +24,7 @@ namespace PhoneBookAPI.Common
             var token = new JwtSecurityToken(
                 claims: claims,
                 expires: DateTime.Now.AddDays(1),
+                //expires: DateTime.Now.AddSeconds(30), fortesting to check token expiry
                 signingCredentials: cred);
             var jwt = new JwtSecurityTokenHandler().WriteToken(token);
             return jwt;

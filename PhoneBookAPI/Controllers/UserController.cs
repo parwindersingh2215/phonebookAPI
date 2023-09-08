@@ -72,8 +72,8 @@ namespace PhoneBookAPI.Controllers
                 {
                     return new Response()
                     {
-                        Data = "Invalid UserName or Email",
-                        Message = "Please Provide Valid UserName or EmailAddress",
+                        Message = "Invalid UserName or Email",
+                        Data = "Please Provide Valid UserName or EmailAddress",
                         Status = StatusCodes.Status400BadRequest,
 
                     };
@@ -94,7 +94,7 @@ namespace PhoneBookAPI.Controllers
                 return new Response()
                 {
                     Data = "Please Provide Valid Password",
-                    Message = "Login Failed",
+                    Message = "Invalid Password",
                     Status = StatusCodes.Status400BadRequest,
 
                 };
