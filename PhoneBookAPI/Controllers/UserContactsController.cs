@@ -93,7 +93,7 @@ namespace PhoneBookAPI.Controllers
                 return new Response()
                 {
                     Data = result,
-                    Message = "Data Saved",
+                    Message = "Success",
                     Status = StatusCodes.Status200OK
                 };
             }
